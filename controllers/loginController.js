@@ -37,7 +37,7 @@ const handleLogin = async (req, res) => {
 };
 const handleLogout = (req, res) => {
     try {
-        res.clearCookie("jwt-token");
+        res.clearCookie("jwt-token", { httpOnly: true, sameSite: "none", secure: true });
         return res.status(200).json({ success: true, message: "Logged out successfully" });
     } catch (e) {
         return res.status(500).json({ success: false, message: e.message });

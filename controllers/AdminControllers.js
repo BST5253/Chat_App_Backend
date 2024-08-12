@@ -40,7 +40,7 @@ const adminLogin = async (req, res) => {
 
 const adminLogout = async (req, res) => {
     try {
-        res.clearCookie("admin-token");
+        res.clearCookie("admin-token", { httpOnly: true, sameSite: "none", secure: true });
         return res.status(200).json({
             success: true,
             message: "Admin Logout Successful"
