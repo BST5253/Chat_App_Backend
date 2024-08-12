@@ -16,7 +16,6 @@ const { socketAuthenticator } = require("./middlewares/verifyJWT");
 const { userSocketIDs } = require("./utils/helpers");
 
 
-
 const app = express();
 const server = createServer(app);
 const PORT = process.env.PORT || 3000;
